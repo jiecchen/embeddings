@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.5)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+find_package(gflags REQUIRED)
+add_library(elog STATIC easylogging++.cc)
+add_executable(graph_coarsen graph_coarsen.cc)
+target_link_libraries(graph_coarsen gflags elog)
